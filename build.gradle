@@ -1,26 +1,22 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
 plugins {
-  id "com.github.hierynomus.license" version "0.11.0"
+  id "com.github.hierynomus.license" version "0.14.0"
+  id "java"
 }
 
 version='1.0.0'
 
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
-
-repositories {
-  mavenLocal()
-  mavenCentral()
-  maven {
-    url 'https://dist.xebialabs.com/public/maven2'
-  }
-
+processResources.configure {
+  filter ReplaceTokens, tokens: [
+    'project.version': version.toString(),
+    'project.name'   : rootProject.name
+  ]
 }
 
 license {
-    header rootProject.file('src/main/license/xebialabs_community.license')
-    strictCheck true
+  header rootProject.file('License.md')
+  strictCheck false
+  ext.year = Calendar.getInstance().get(Calendar.YEAR)
+  ext.name = 'XEBIALABS'
 }
