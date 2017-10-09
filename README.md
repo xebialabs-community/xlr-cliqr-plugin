@@ -1,4 +1,4 @@
-# XL Releae CliQr plugin
+# XL Release CliQr plugin
 
 [![Build Status][xlr-cliqr-plugin-travis-image]][xlr-cliqr-plugin-travis-url]
 [![License: MIT][xlr-cliqr-plugin-license-image]][xlr-cliqr-plugin-license-url]
@@ -22,7 +22,7 @@ This is a plugin to be developed via CliQr REST API.  A simple ListUsers method 
 
 ## Requirements
 
-* XL Release 4.5+
+* XL Release 5.0+
 
 ## Installation
 
